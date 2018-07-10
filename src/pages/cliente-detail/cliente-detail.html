@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ClienteDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Nombres</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.nombres"></ion-input>
+      </ion-item>      
+      <ion-item>
+        <ion-label floating>Apellidos</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.apellidos"></ion-input>
+      </ion-item> 
+      <ion-item>
+          <ion-label>Tipo</ion-label>
+          <ion-select [(ngModel)]="cliente.tipo">
+            <ion-option *ngFor="let tipo of this.tiposClientes" value="tipo.descripcion">tipo.descripcion</ion-option>
+          </ion-select>
+        </ion-item>     
+    </ion-list>
+    <button ion-button block (click)="onSaveCliente()">Guardar</button>
+    <button ion-button block color="danger" *ngIf="this.updating" (click)="deleteCliente()">Eliminar</button>
+
+</ion-content>
+

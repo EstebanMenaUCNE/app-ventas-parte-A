@@ -1,0 +1,27 @@
+<!--
+  Generated template for the TipoClienteDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tipo cliente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Descripción</ion-label>
+        <ion-input type="text" [(ngModel)]="tipoCliente.descripcion"></ion-input>
+      </ion-item>      
+    </ion-list>
+    <button ion-button block (click)="onSaveTipoCliente()">Guardar</button>
+    <button ion-button block color="danger" *ngIf="this.updating" (click)="deleteTipoCliente()">Eliminar</button>
+
+</ion-content>
